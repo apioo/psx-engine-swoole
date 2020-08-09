@@ -1,0 +1,26 @@
+{
+  "name": "psx/engine-swoole",
+  "keywords": ["psx", "engine", "framework", "swoole"],
+  "homepage": "http://phpsx.org",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Christoph Kappestein",
+      "email": "christoph.kappestein@gmail.com",
+      "homepage": "http://christoph.kappestein.com/"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "ext-swoole": "*",
+    "psx/engine": "^0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "PSX\\Engine\\Swoole\\": "src/"
+    }
+  },
+  "require-dev": {
+    "swoole/ide-helper": "^4.5"
+  }
+}
