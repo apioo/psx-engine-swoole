@@ -1,7 +1,7 @@
 <?php
 /*
- * PSX is a open source PHP framework to develop RESTful APIs.
- * For the current version and informations visit <http://phpsx.org>
+ * PSX is an open source PHP framework to develop RESTful APIs.
+ * For the current version and information visit <https://phpsx.org>
  *
  * Copyright 2010-2020 Christoph Kappestein <christoph.kappestein@gmail.com>
  *
@@ -34,40 +34,21 @@ use Swoole\Http as SwooleHttp;
  * @see     https://github.com/swoole/swoole-src
  * @author  Christoph Kappestein <christoph.kappestein@gmail.com>
  * @license http://www.apache.org/licenses/LICENSE-2.0
- * @link    http://phpsx.org
+ * @link    https://phpsx.org
  */
 class Engine implements EngineInterface
 {
-    /**
-     * @var string
-     */
-    protected $ip;
+    private string $ip;
+    private int $port;
+    private ?array $options;
 
-    /**
-     * @var integer
-     */
-    protected $port;
-
-    /**
-     * @var array
-     */
-    protected $options;
-
-    /**
-     * @param string $ip
-     * @param integer $port
-     * @param array|null $options
-     */
-    public function __construct($ip = '0.0.0.0', $port = 8080, array $options = null)
+    public function __construct(string $ip = '0.0.0.0', int $port = 8080, ?array $options = null)
     {
         $this->ip      = $ip;
         $this->port    = $port;
         $this->options = $options;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function serve(DispatchInterface $dispatch): void
     {
         $server = new SwooleHttp\Server($this->ip, $this->port);
