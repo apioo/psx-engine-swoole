@@ -64,9 +64,9 @@ class Engine implements EngineInterface
         $server->start();
     }
 
-    private function process(SwooleHttp\Request $swooleRequest, SwooleHttp\Response $swooleResponse, DispatchInterface $dispatch)
+    private function process(SwooleHttp\Request $swooleRequest, SwooleHttp\Response $swooleResponse, DispatchInterface $dispatch): void
     {
-        $uri = new Uri($swooleRequest->server['request_uri']);
+        $uri = Uri::parse($swooleRequest->server['request_uri']);
         if ($swooleRequest->get) {
             $uri = $uri->withParameters($swooleRequest->get);
         }
