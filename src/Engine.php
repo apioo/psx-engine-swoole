@@ -3,7 +3,7 @@
  * PSX is an open source PHP framework to develop RESTful APIs.
  * For the current version and information visit <https://phpsx.org>
  *
- * Copyright 2010-2020 Christoph Kappestein <christoph.kappestein@gmail.com>
+ * Copyright (c) Christoph Kappestein <christoph.kappestein@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ class Engine implements EngineInterface
 
     public function __construct(string $ip = '0.0.0.0', int $port = 8080, ?array $options = null)
     {
-        $this->ip      = $ip;
-        $this->port    = $port;
+        $this->ip = $ip;
+        $this->port = $port;
         $this->options = $options;
     }
 
